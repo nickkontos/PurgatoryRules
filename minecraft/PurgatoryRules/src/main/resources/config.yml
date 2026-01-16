@@ -1,0 +1,80 @@
+purgatory:
+  world: "purgatory"
+
+  portal-redirect:
+    enabled: true
+    target:
+      x: -30
+      y: 126
+      z: 119
+      yaw: 0
+      pitch: 0
+
+  punish:
+    target:
+      x: 52
+      y: 51
+      z: 128
+      yaw: 0
+      pitch: 0
+    worlds:
+      - "world"
+      - "world_nether"
+    cooldown-ms: 2000
+    release-after-seconds: 120
+    backup-command: "irp forcebackup player {player}"
+    clear-inventory: true
+    clear-xp: true
+    release-message: "&7wait... it was all a dream?"
+    title:
+      enabled: true
+      title: "&cYou have been cast into purgatory"
+      subtitle: "&7Remain here for &c2 minutes"
+      fade-in-ticks: 10
+      stay-ticks: 140
+      fade-out-ticks: 20
+    bossbar:
+      enabled: true
+      title: "&cPurgatory"
+      color: RED
+      style: SOLID
+      # Set to 0 to show the boss bar for the full purgatory duration.
+      duration-seconds: 0
+
+  reset-death-stat: true
+
+  reset:
+    enabled: true
+    template-path: "/srv/minecraft/backups/purgatory-template"
+    restore-on-empty: true
+
+  sins:
+    pvp:
+      enabled: true
+      type: "pvp-hit"
+      reason: "pvp"
+      worlds:
+        - "world"
+        - "world_nether"
+      hits-required: 1
+      hits-window-seconds: 10
+      critical-only: false
+      cooldown-ms: -1
+      warning-message: "&c<Lord™> &e{nickname}&7, you have lifted your hand against a fellow soul."
+      warning-always: true
+      ce-events: []
+      hologram-commands: []
+    cat_hit:
+      enabled: true
+      type: "entity-hit"
+      reason: "cat_hit"
+      entities:
+        - "CAT"
+      hits-required: 1
+      hits-window-seconds: 10
+      critical-only: false
+      cooldown-ms: -1
+      warning-message: "&c<Lord™> &e{nickname}&7, you just committed one of the greatest sins conceivable: hitting an adorable master. This is a warning for what is coming for you if you continue."
+      warning-always: true
+      ce-events: []
+      hologram-commands: []

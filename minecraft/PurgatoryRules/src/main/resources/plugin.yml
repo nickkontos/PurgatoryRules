@@ -1,0 +1,15 @@
+name: PurgatoryRules
+main: com.homeofcappuccino.purgatory.PurgatoryRulesPlugin
+version: 1.3.0
+api-version: 1.21
+authors:
+  - Nicolas Kondós
+  - Codex
+commands:
+  purgatoryrules:
+    description: Reload PurgatoryRules configuration
+    usage: /purgatoryrules reload
+    permission: purgatoryrules.reload
+permissions:
+  purgatoryrules.reload:
+    default: op
